@@ -15,7 +15,7 @@ function* addPlace(action) {
 
 function* placeSaga(){
     yield takeLatest(types.REQUEST_ADD_PLACE, addPlace);
-    yield takeLatest(types.REQUEST_LIST_PLACES, loadPlaces);
+    // yield takeLatest(types.REQUEST_LIST_PLACES, loadPlaces);
 }
 
 export default placeSaga;

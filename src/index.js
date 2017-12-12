@@ -12,11 +12,12 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 import placeSaga from './store/places/saga'
+import placeLogic from './store/places/logic';
 
 import  reducers from './store/reducers';
 
 const sagaMiddleware = createSagaMiddleware();
-let store = createStore(reducers, applyMiddleware(sagaMiddleware));
+let store = createStore(reducers, applyMiddleware(sagaMiddleware, placeLogic));
 
 sagaMiddleware.run(placeSaga);
 
